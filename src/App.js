@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from 'react';
 
 const object ={
   name: "alex",
@@ -20,9 +21,28 @@ function createFromObj(){
 const keys = Object.keys(object)
 }
 
+
+
+
 function App() {
+  function InnerWidth(){
+    const offsetWidth = document?.getElementById('pix')?.offsetWidth;
+      useEffect(() => {
+        console.log("offsetWidth",offsetWidth);
+        
+  }, [offsetWidth])
+  return <div>{offsetWidth}</div>
+  }
+ 
+
+  // useEffect(() => {
+ 
+  // }, [offsetWidth])
+
   return (
     <div className="App">
+    <div id="pix"></div>
+    <InnerWidth className="width"/>
    <button onClick={createSet}>clcick</button>
     </div>
   );

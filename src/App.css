@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.pix{
+  background-color: lightblue;
+  height: 250px;
+  width: clamp(300px 50% 600px);
+  color:white;
+}
+.width{
+  background-color: lightblue;
+  height: 250px;
+  width: clamp(300px 50% 600px);
+  color:white;
+}
