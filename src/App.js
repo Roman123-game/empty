@@ -25,7 +25,7 @@ function App() {
     console.log("offsetWidth",offsetWidth);
     setWidthh(offsetWidth)
     
-}, [widthh])
+}, [offsetWidth])
   function InnerWidth(){
 
   return <div>{widthh}</div>
@@ -46,8 +46,10 @@ function App() {
 
   return (
     <div className="App">
-    <div id="pix"></div>
+    <div className='pix' id="pix"> 
     <InnerWidth className="width"/>
+    </div>
+   
 
    <button onClick={createSet}>{createSet()}</button>
     </div>
