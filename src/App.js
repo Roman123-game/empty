@@ -49,9 +49,7 @@ function App() {
     <div className='pix' id="pix"> 
     <InnerWidth className="width"/>
     </div>
-   
-
-   <button onClick={createSet}>{createSet()}</button>
+   <button onClick={createSet}>click</button>
     </div>
   );
 }
