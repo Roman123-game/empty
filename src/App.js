@@ -40,16 +40,13 @@ function App() {
   return <div>{set}</div>
     }
 
-  // useEffect(() => {
- 
-  // }, [offsetWidth])
-
   return (
     <div className="App">
     <div className='pix' id="pix"> 
     <InnerWidth className="width"/>
     </div>
    <button onClick={createSet}>click</button>
+
     </div>
   );
 }
