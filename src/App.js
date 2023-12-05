@@ -1,34 +1,21 @@
 import { useState , useEffect } from 'react';
 import './App.css';
 
-// const object ={
-//   name: "alex",
-//   age :40 
-// }
-
-
-
-  
-
-// function createFromObj(){
-// const keys = Object.keys(object)
-// }
-
-
-
 
 function App() {
-  const [widthh, setWidthh]= useState(0)
+  const [width, setWidth]= useState(0)
   const offsetWidth = document?.getElementById('pix')?.offsetWidth;
 
   useEffect(() => {
     console.log("offsetWidth",offsetWidth);
-    setWidthh(offsetWidth)
+    setWidth(offsetWidth)
     
 }, [offsetWidth])
+
+
   function InnerWidth(){
 
-  return <div>{widthh}</div>
+  return <div>{width}</div>
   }
  
 
