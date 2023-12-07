@@ -1,39 +1,30 @@
-import { useState , useEffect } from 'react';
-import './App.css';
-
-
+import React, { useLayoutEffect, useRef, useState } from "react";
+import "./App.css"
 function App() {
-  const [width, setWidth]= useState(0)
-  const offsetWidth = document?.getElementById('pix')?.offsetWidth;
+  const elementRef = useRef(null);
+  const [elementWidth, setElementWidth] = useState(0);
 
-  useEffect(() => {
-    console.log("offsetWidth",offsetWidth);
-    setWidth(offsetWidth)
-    
-}, [offsetWidth])
-
-
-  function InnerWidth(){
-
-  return <div>{width}</div>
-  }
- 
-
-  function createSet(){
-    const array = ['a','b', 'c', 'b','a']
-    const set = Array.from(new Set(array).values())
-  
-   console.log(set)
-  return <div>{set}</div>
+  useLayoutEffect(() => {
+    function handleResize() {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setElementWidth(width);
+      }
     }
 
-  return (
-    <div className="App">
-    <div className='pix' id="pix"> 
-    <InnerWidth className="width"/>
-    </div>
-   <button onClick={createSet}>click</button>
+    handleResize(); // initial call to get width and height of the element
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [elementRef]);
 
+  return (
+    <div className="container">
+      <div className="card" ref={elementRef}>
+        <h3>Get Width and Height</h3>
+        <p>
+          Width: <strong>{elementWidth}</strong>
+        </p>
+      </div>
     </div>
   );
 }
