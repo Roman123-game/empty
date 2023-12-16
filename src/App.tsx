@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import "./App.css"
 function App() {
-  const elementRef = useRef(null);
-  const [elementWidth, setElementWidth] = useState(0);
+  const elementRef = useRef<any|null>(null);
+  const [elementWidth, setElementWidth] = useState<any|null>(0);
 
   useLayoutEffect(() => {
     function handleResize() {
       if (elementRef.current) {
-        const width = elementRef.current.offsetWidth;
+        const width = elementRef?.current?.offsetWidth;
         setElementWidth(width);
       }
     }
