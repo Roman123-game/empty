@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="container">
       <div className="card" ref={elementRef}>
-        <h3>Get Width and Height</h3>
+        <h3>Get Width</h3>
         <p>
           Width: <strong>{elementWidth}</strong>
         </p>
